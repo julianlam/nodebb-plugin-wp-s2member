@@ -1,15 +1,17 @@
 {
-  "name": "nodebb-plugin-quickstart",
+  "name": "nodebb-plugin-wp-paidmembershipspro",
   "version": "0.0.0",
-  "description": "",
+  "description": "Integration with Wordpress Paid Memberships Pro plugin",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/julianlam/nodebb-plugin-quickstart"
+    "url": "https://github.com/julianlam/nodebb-plugin-wp-paidmembershipspro"
   },
   "keywords": [
     "nodebb",
-    "plugin"
+    "plugin",
+    "wordpress",
+    "paidmembershipspro"
   ],
   "author": {
     "name": "Julian Lam",
@@ -17,10 +19,13 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/julianlam/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/julianlam/nodebb-plugin-wp-paidmembershipspro/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
     "compatibility": "^1.0.0"
+  },
+  "dependencies": {
+    "xmlrpc": "1.3.1"
   }
 }

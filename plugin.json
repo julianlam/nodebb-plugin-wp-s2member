@@ -1,19 +1,11 @@
 {
-	"id": "nodebb-plugin-quickstart",
-	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
+	"id": "nodebb-plugin-wp-paidmembershipspro",
+	"url": "https://github.com/NodeBB/nodebb-plugin-wp-paidmembershipspro",
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
-		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
-	],
-	"staticDirs": {
-		"static": "./static"
-	},
-	"less": [
-		"static/style.less"
-	],
-	"scripts": [
-		"static/lib/main.js"
+		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
+		{ "hook": "static:sso-wordpress.login", "method": "process" }
 	],
 	"acpScripts": [
 		"static/lib/admin.js"
