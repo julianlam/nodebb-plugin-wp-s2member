@@ -1,17 +1,17 @@
 {
-  "name": "nodebb-plugin-wp-paidmembershipspro",
+  "name": "nodebb-plugin-wp-s2member",
   "version": "1.0.1",
-  "description": "Integration with Wordpress Paid Memberships Pro plugin",
+  "description": "Integration with Wordpress s2Member plugin",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/julianlam/nodebb-plugin-wp-paidmembershipspro"
+    "url": "https://github.com/julianlam/nodebb-plugin-wp-s2member"
   },
   "keywords": [
     "nodebb",
     "plugin",
     "wordpress",
-    "paidmembershipspro"
+    "s2Member"
   ],
   "author": {
     "name": "Julian Lam",
@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/julianlam/nodebb-plugin-wp-paidmembershipspro/issues"
+    "url": "https://github.com/julianlam/nodebb-plugin-wp-s2member/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {

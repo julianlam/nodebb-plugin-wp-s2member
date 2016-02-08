@@ -1,6 +1,6 @@
 {
-	"id": "nodebb-plugin-wp-paidmembershipspro",
-	"url": "https://github.com/NodeBB/nodebb-plugin-wp-paidmembershipspro",
+	"id": "nodebb-plugin-wp-s2member",
+	"url": "https://github.com/NodeBB/nodebb-plugin-wp-s2member",
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },

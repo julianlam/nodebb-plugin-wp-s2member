@@ -1,18 +1,18 @@
 'use strict';
 /* globals $, app, socket */
 
-define('admin/plugins/wp-paidmembershipspro', ['settings'], function(Settings) {
+define('admin/plugins/wp-s2member', ['settings'], function(Settings) {
 
 	var ACP = {};
 
 	ACP.init = function() {
-		Settings.load('wp-paidmembershipspro', $('.wp-paidmembershipspro-settings'));
+		Settings.load('wp-s2member', $('.wp-s2member-settings'));
 
 		$('#save').on('click', function() {
-			Settings.save('wp-paidmembershipspro', $('.wp-paidmembershipspro-settings'), function() {
+			Settings.save('wp-s2member', $('.wp-s2member-settings'), function() {
 				app.alert({
 					type: 'success',
-					alert_id: 'wp-paidmembershipspro-saved',
+					alert_id: 'wp-s2member-saved',
 					title: 'Settings Saved',
 					message: 'Please reload your NodeBB to apply these settings',
 					clickfn: function() {
