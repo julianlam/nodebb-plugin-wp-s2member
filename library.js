@@ -85,8 +85,7 @@ plugin.grantAccess = function(uid, groupName, callback) {
 	winston.verbose('[plugins/wp-paidmembershipspro] Granting access to "' + groupName + '" for uid ' + uid);
 	async.series([
 		async.apply(groups.create, { name: groupName, hidden: 1 }),
-		async.apply(groups.join, groupName, 1),	// Put the admin user in this group too
-		async.apply(groups.join, groupName, uid)
+		async.apply(groups.join, groupName, parseInt(uid, 10))
 	], callback);
 };
 
