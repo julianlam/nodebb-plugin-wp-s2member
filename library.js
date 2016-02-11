@@ -83,10 +83,16 @@ plugin.process = function(data, callback) {
 			if (level) {
 				level = parseInt(level[1], 10);
 				winston.verbose('[plugins/wp-s2member] uid ' + data.user.uid + ' is level ' + level + ', logging them in...');
-				plugin.grantAccess(data.user.uid, level);
+				async.series([
+					async.apply(plugin.revokeAccess, data.user.uid),
+					async.apply(plugin.grantAccess, data.user.uid, level)
+				]);
 			} else {
 				winston.warn('[plugins/wp-s2member] Could not find level for user ' + data.user.uid + '!');
-				plugin.revokeAccess(data.user.uid);
+				async.series([
+					async.apply(plugin.revokeAccess, data.user.uid),
+					async.apply(plugin.grantAccess, data.user.uid, 0)
+				]);
 			}
 		});
 
@@ -108,10 +114,13 @@ plugin.revokeAccess = function(uid, callback) {
 	callback = callback || function() {};
 	winston.verbose('[plugins/wp-s2member] Revoking access to membership groups for uid ' + uid);
 
-	for(var x=1;x<=4;x++) {
-		groups.leave('s2Member-' + x, uid);
+	var groupNames = [];
+	for(var x=0;x<=4;x++) {
+		groupNames.push('s2Member-' + x);
 	}
-	groups.join('s2Member-0', uid, callback);
+	async.each(groupNames, function(name, next) {
+		groups.leave(name, uid, next);
+	}, callback);
 };
 
 plugin.processEOT = function(req, res, next) {
