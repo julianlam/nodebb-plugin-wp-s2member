@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-wp-s2member",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Integration with Wordpress s2Member plugin",
   "main": "library.js",
   "repository": {
