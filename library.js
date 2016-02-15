@@ -60,7 +60,8 @@ plugin.createGroups = function(callback) {
 					name: groupName,
 					description: '',
 					hidden: 1,
-					disableJoinRequests: 1
+					disableJoinRequests: 1,
+					system: 1
 				}, next);
 			} else {
 				next();
